@@ -21,3 +21,32 @@ def getAdjs(inp):
     #return re.findall(r'[a-zA-Z0-9_]+y', inp) # the same thing
     #return re.findall(r'\w{1,}y', inp) # the same thing
 print getAdjs('the funny book was goofy')
+
+def isEmail(inp):
+	return re.search(r'^\w+@\w+(\.\w).*?', inp) != None
+print isEmail('blah@hello.com')
+print isEmail('sd$sd@hello.com')
+
+def getTxts(inp):
+	return re.findall(r'\w+\.txt', inp)
+print getTxts('yo.html blah.txt woah.txt')
+
+def getNumWords(inp):
+	i = 0
+	awe = 0
+	return re.findall(r'\w+', inp)
+print getNumWords('yo.html blah.txt woah.txt')
+for i in wordList:		#set a condition to check if the word is awesome
+	if wordList[i] == 'awesome' or 'awes0me':
+		awe += 1
+percAwesomeness = (awe / len(wordList)) * 100
+
+#def percAwesome(inp):
+#	result = re.search(r'awesome|awes0me')
+#	words, found, percentage = 0
+#	re.''
+#	if result == 1:
+#		found += 1
+#percentage = (found/words)*100
+#print percAwesome('')
+#print 'Percentage awesomeness is', percentage''
